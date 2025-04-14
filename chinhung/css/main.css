@@ -31,6 +31,11 @@ a {
     width: 1260px;
     margin: 0 auto;
 }
+header {
+    height: 100px
+    /* header는 대부분 디자인한 높이를 잡아주고 코딩함
+        header 에는 존재하는 것이 많음*/
+}
 header .wrapper {
     display: flex;
     justify-content: space-between;
@@ -43,4 +48,86 @@ header .logo a img {
     width: 169px;
     /* 이미지는 넓이나 높이 둘중 하나만 주면 나머지는 알아서 조정됨
     오히려 둘다 값을 주면 비율이 이상해짐 이미지만 해당 */
+}
+header .gnb ul {
+    display: flex;
+}
+header .gnb ul li a {
+    display: block; /* a의 필수값 */
+    font-size: 25px;
+    color: #1d1d1d;
+    padding: 31px 45px 31px 45px;
+}
+
+.visual {
+    background: url(../images/visual_bg.png) no-repeat center center / cover;
+    /* background 한번에 정의                    반복     좌우  위아래    크기*/
+    height: 800px;
+    color: #fff;
+    text-align: right;
+}
+.visual h2 {
+    font-size: 50px;
+    line-height: 1.2;
+    padding: 480px 0 12px 0;
+}
+
+.biz {
+    margin: 290px 0 0 0;
+    text-align: center;
+}
+.biz .tit h2 {
+    font-size: 55px;
+    font-weight: 700;
+    color: #1d1d1d;
+    line-height: 1.1;
+}
+.biz .list {
+    margin: 75px 0 0 0;
+}
+.biz .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.biz .list ul li {
+    width: 297px;
+}
+.biz .list ul li a {
+    display: block; /* a의 필수값 */
+}
+.biz .list ul li a h3 {
+    font-size: 35px;
+    color: #1d1d1d;
+    margin: 10px 0 10px 0;
+}
+.biz .list ul li a .more {
+    border: 1px solid #ccc;
+    display: block;
+    padding: 14px 0;
+    margin: 23px 0 0 0;
+}
+
+.brand {
+    background: url(../images/brand_bg.png) no-repeat center center / cover;
+    margin: 138px 0 0 0;
+    height: 854px;
+    color: #fff;
+}
+.brand .sub_tit {
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 55px 0;
+}
+.brand h2 {
+    padding: 248px 0 3px 0;
+}
+.brand .cnt {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 10px 0 0 0;
+}
+
+footer {
+    margin: 400px 0 0 0;
 }
