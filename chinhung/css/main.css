@@ -1,6 +1,7 @@
 /* htmp파일에서는 main.css만 호출,
 다른 필요한 css는 main.css가 부름*/
 @import url(font.css);
+
 body {
     font-family: 'Pretendard', sans-serif;
     font-size: 17px;
@@ -26,7 +27,19 @@ a {
     color: inherit;
     text-decoration: none;
 }
+address {
+    font-style: normal; /* 어드레스태그의 이텔렉 스타일을 일반 스타일로 초기화*/
+}
 /* END :: 태그 초기화 */
+#wrap {
+    min-width: 1300px;
+    /* 홈페이지 넓이 1260px에 왼쪽/오른쪽의 여백을 20px 정도 들어간다고 가정
+       1260 + 20 + 20 = 1300px 가됨
+       (브라우저가 줄어들었을때 가로스크롤바가 생겼을때 왼쪽/오른쪽 여백)
+       
+       min-width는 늘어나는건 상관없음 줄어들때 이것보다 줄어들면 안됨   
+    */
+}
 .wrapper {
     width: 1260px;
     margin: 0 auto;
@@ -129,5 +142,18 @@ header .gnb ul li a {
 }
 
 footer {
-    margin: 400px 0 0 0;
+    padding: 45px 0 45px 0;
+}
+footer .f_nav ul {
+    display: flex;
+    gap: 45px;
+    color: #1d1d1d;
+}
+footer .f_nav ul li {
+    border-right: 1px solid #ccc;
+}
+footer .f_info {
+    margin: 20px 0 5px 0;
+    display: flex;
+    gap: 20px
 }
