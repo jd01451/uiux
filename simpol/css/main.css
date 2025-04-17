@@ -1,0 +1,122 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+header {
+    display: flex;
+    justify-content: space-between;
+    /* logo와 inner를 header 넓이 안에서 좌우 끝으로 배치 */
+    height: 100px;
+    padding: 0 25px; /* 위아래 좌우 */
+}
+header .logo {
+    margin: 25px 0 0 0;
+}
+header .inner {
+    display: flex; /* gnb shop을 좌우로 배치 */
+    align-items: center; /* 위아래 가운데 */
+    gap: 25px
+}
+header .inner .gnb ul {
+    display: flex;
+}
+header .inner .gnb ul li a {
+    display: block; /* a 필수 값 */
+    font-size: 25px;
+    color: #1d1d1d;
+    line-height: normal;
+    /* header의 높이랑 1차메뉴의 a의 높이는 같아야함.. a에 행간을 header의 높이값으로 줌
+        a에 높이가 생기고 글자는 위아래 가운데 정렬 */
+    padding: 35px 30px;
+}
+header .inner .shop {
+    font-size: 25px;
+    font-weight: 700;
+    color: #fff;
+    line-height: normal;
+    background-color: #005921;
+    border-radius: 23px;
+    padding: 8px 42px;
+}
+
+.visual {
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    height: 800px;
+    margin: 0 20px;
+    border-radius: 20px;
+    color: #fff;
+    text-align: center;
+}
+.visual h2 {
+    font-size: 45px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    padding: 346px 0 0 0;
+}
+
+.product {
+    margin: 181px 0 0 0;
+}
+.product .tit h2 {
+    font-weight: 700;
+    color: #005921;
+}
+.product .tit p {
+    font-size: 45px;
+    color: #1d1d1d;
+    letter-spacing: 0.03em;
+}
+.product .list {
+    margin: 52px 0 0 0;
+}
+.product .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.product .list ul li a {
+    display: block;
+}
+.product .list ul li a .photo {
+    font-size: 0;
+    line-height: 0;
+    /* 이미지 사진 하단 여백 제거
+        img태그에 직접 주면 적용X
+        img태그만 감싸는 요소에 줘야함 */
+}
+.product .list ul li h3 {
+    font-size: 25px;
+    margin: 20px 0 0 0;
+    /* 한줄로 제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.network {
+    background: url(../images/network_bg.jpg) no-repeat center center / cover;
+    margin: 188px 0 0 0;
+    height: 800px;
+    color: rgba(255, 255, 255, 0.8)
+}
+.network h2 {
+    padding: 295px 0 0 0;
+    color: #fff;
+}
+.network .sub_tit {
+    font-size: 45px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.03em;
+}
+.network a {
+    display: inline-block;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 23px;
+    padding: 8px 26px;
+    margin: 32px 0;
+}
+
+footer {
+    margin: 400px 0 0 0;
+}
