@@ -1,0 +1,93 @@
+@import url(font.css);
+@import url(default.css);
+@import url(common.css);
+
+header {
+    position: absolute; /* warp 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    color: #fff;
+    width: 100%; /* wrap의 넓이의 100% */
+    height: 110px;
+    border: 1px solid rgba(255, 255, 255, 0.2)
+}
+header .gnb ul {
+    display: flex;
+    justify-content: center;
+}
+header .gnb ul li a {
+    display: block;
+    line-height: 110px;
+    font-size: 22px;
+    font-weight: 700;
+    padding: 0 26px;
+}
+
+.visual {
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    height: 800px;
+    color: #fff;
+    text-align: center;
+}
+.visual h2 {
+    font-size: 45px;
+    font-weight: 700;
+    padding: 353px 0 10px 0;
+}
+.visual p {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.product {
+    margin: 146px 0 0 0;
+}
+.product .wrapper {
+    position: relative; /* more 정렬의 기준점 */
+}
+.product h2 {
+    font-size: 45px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.product .list {
+    margin: 40px 0 0 0;
+}
+.product .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.product .list ul li {
+    width: calc(33.33% - 16px);
+    /* 사진이 3개므로 100/3 = 33.33%
+       여백한개 24px 총여백 48px/3 = 16px */
+}
+.product .list ul li a {
+    display: block;
+    position: relative; /* h3 정렬 기준점 */
+}
+.product .list ul li a .photo {
+    font-size: 0; /* 이미지 하단의 여백 삭제*/
+    line-height: 0;
+}
+.product .list ul li h3 {
+    position: absolute; /* a를 기준으로 정렬  */
+    left: 24px;
+    bottom: 24px;
+    color: #fff;
+    width: calc(100% - 48px) /* 글자 여백 24*3 = 72 - 24 = 48 */
+}
+.product .more {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    right: 0;
+    top: 10px;
+    font-size: 18px;
+    border: 1px solid #000;
+    border-radius: 100px;
+    padding: 5px 36px;
+}
+
+body {
+    margin: 0 0 200px 0;
+}
