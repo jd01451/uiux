@@ -15,7 +15,7 @@ a {
 }
 button {
     cursor: pointer; /* 마우스 포인터 손바닥 */
-    font-family: inherit; /* 글자의 기본 스타일을 상속 받지 않아 상복받으라고 써줌 */
+    font-family: inherit; /* 글자의 기본 스타일을 상속 받지 않아 상속받으라고 써줌 */
     font-weight: inherit;
     font-size: inherit;
     line-height: inherit;
