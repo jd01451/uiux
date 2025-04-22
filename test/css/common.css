@@ -27,7 +27,7 @@ body {
     /* html 표준에 따르자면 글자를 써야하는데 디자인에는 글자가 없어서
     글자를 없애는 클래스 */
     position: absolute;
-    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
     width: 1px;
     height: 1px;
     margin: -1px;
