@@ -392,8 +392,6 @@ header .logo a {
 }
 .community .inner .notice .list ul li a:hover strong {
     font-weight: 700;
-    text-decoration: underline;
-    text-underline-offset: 4px;
 }
 .community .inner .notice .list ul li span {
     width: 85px;
