@@ -1,0 +1,100 @@
+@import url(default.css);
+@import url(font.css);
+@import url(res_common.css);
+
+.tj {
+    margin: 126px 0 0 0;
+}
+.tj .group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tj .group.left {
+    flex-direction: row-reverse;
+}
+.tj .group.right {
+    text-align: right;
+    margin: 130px 0 0 0;
+}
+.tj .group .tit h2 {
+    font-size: 45px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 0 0 19px 0;
+}
+.tj .group .photo {
+    border-radius: 30px;
+    overflow: hidden;
+    width: 511px;
+    height: 390px;
+}
+.tj .group .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width:640px) {
+    .tj {
+        margin: 81px 0 0 0;
+    }
+    .tj .group {
+        display: block;
+        /* flex요소 없으므로 block */
+    }
+    .tj .group.right {
+        text-align: left;
+        margin: 64px 0 0 0;
+    }
+    .tj .group .tit h2 {
+        font-size: 35px;
+        font-weight: 700;
+        color: #1d1d1d;
+        margin: 22px 0 10px 0;
+    }
+    .tj .group .tit h2 p br {
+        display: none;
+        /* pc에 있는 br태그를 숨김 */
+    }
+    .tj .group .photo {
+        border-radius: 15px;
+        width: auto;
+        height: 214px;
+    }
+}/* @media */
+
+.gallery {
+    margin: 177px 0 0 0;
+}
+.gallery .photo {
+    border-radius: 30px;
+    overflow: hidden; /* 필수 */
+    /* 이미지하단에 여백이 발생하는데 이는 이미지가 inline 태그여서 하단에
+        글자의 행간이 적용되어있음 (이미지를 감싸는 요소 제거)
+        아래값을 넣으면 해결됨 */
+    font-size: 0;
+    line-height: 0;
+}
+.gallery .photo img {
+    width: 100%; /* 이미지는 넓이만 주면 높이는 알아서 들어감 */
+}
+
+@media screen and (max-width:640px) {
+    .gallery {
+        margin: 64px 0 0 0;
+    }
+    .gallery .photo {
+        border-radius: 10px;
+        overflow: hidden; /* 필수 */
+        /* 이미지하단에 여백이 발생하는데 이는 이미지가 inline 태그여서 하단에
+            글자의 행간이 적용되어있음 (이미지를 감싸는 요소 제거)
+            아래값을 넣으면 해결됨 */
+        font-size: 0;
+        line-height: 0;
+    }
+}/* media gallery */
+
+body {
+    margin: 0 0 300px 0;
+}

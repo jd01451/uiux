@@ -1,6 +1,6 @@
 /* 모든페이지에 공통으로 들어가는 기본 스타일 */
 body {
-    font-family: "NanumSquare-Neo";
+    font-family: 'Pretendard', sans-serif;
     font-size: 17px;
     font-weight: 400;
     line-height: 1.2;
@@ -16,6 +16,18 @@ body {
     min-width: 1360px;
     /* width + 50 + 50 =1360px */
     position: relative; /* header 정렬의 기준 */
+}
+@media screen and (max-width:640px) { /* 브라우저 넓이 640px 이하만 적용*/
+    body {
+        font-size: 16px;
+    }
+    .wrapper {
+        width: auto; /* 100% 안됨*/
+        margin: 0 20px; /* 좌우여백 20px */
+    }
+    #wrap {
+        min-width: 0;
+    }
 }
 /* 글자 숨기기 클래스 */
 .blind {
