@@ -1,1 +1,1 @@
-[CLICK](https://jd01451.github.io)
+[CLICK](https://jd01451.github.io/uiux)
