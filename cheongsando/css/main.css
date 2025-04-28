@@ -95,6 +95,7 @@ header .logo a {
     height: 144px;
     background-color: #fff;
     color: #000285;
+    transition: 0.3s;
     border-radius: 50%; /* 동그라미 */
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
     text-align: center;
@@ -203,7 +204,7 @@ header .logo a {
     position: absolute;
     left: 0;
     bottom: -2px;
-    width: calc(100% - 5px);
+    width: 100%;
     height: 1px;
     background-color: #1d1d1d;
     font-weight: 700;
@@ -322,7 +323,7 @@ header .logo a {
     position: absolute;
     left: 0;
     bottom: -2px;
-    width: calc(100% - 5px);
+    width: 100%;
     height: 1px;
     background-color: #1d1d1d;
     font-weight: 700;
@@ -355,10 +356,83 @@ header .logo a {
     height: 341px;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.6);
+    transition: 0.3s;
     backdrop-filter: blur(3px);
+    padding: 46px 40px 0 40px;
+    /* 높이로 제한하고 있기 때문에 하단 여백 안줌 */
+    position: relative; /* more 포지션*/
+
+}
+.community .inner .notice:hover {
+    background-color: #000;
+}
+.community .inner .notice h3 {
     font-size: 25px;
     font-weight: 700;
-    padding: 46px 0 0 40px;
+}
+.community .inner .notice .list {
+    margin: 9px 0 0 0;
+}
+.community .inner .notice .list ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.community .inner .notice .list ul li a {
+    display: flex; /* strong span */
+    justify-content: space-between;
+    padding: 11px 0 11px 0
+}
+.community .inner .notice .list ul li a strong {
+    width: calc(100% - 90px);
+    /* 100%에서
+        옆에 날짜 넓이 + 둘사이 여백을 뺌
+        1줄 제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.community .inner .notice .list ul li a:hover strong {
+    font-weight: 700;
+    text-decoration: underline;
+}
+.community .inner .notice .list ul li span {
+    width: 85px;
+    /*  날짜는 자리수가 늘지 않음 
+        25-1-1 이렇게 표시하면 자릿수가 변동됨
+        그래서 날자 표기는 25-01-01 이렇게 표시 - 자릿수를 변동시키지 않기 위해
+        제일 넓은 숫자를 기준으로 최대 넓이를 고정값으로 줌 
+    */
+    text-align: center;
+}
+.community .inner .notice .more {
+    position: absolute; /* notice 레이아웃 */
+    right: 40px;
+    top: 52px;
+    padding: 0 14px 0 0;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.8);
+}
+.community .inner .notice .more:hover {
+    color: #fff;
+    font-weight: 700;
+}
+.community .inner .notice .more:hover::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    font-weight: 700;
+}
+.community .inner .notice .more::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_61_153' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='16' height='16'%3E%3Crect x='0.553589' y='0.0273438' width='15.4465' height='15.4465' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_61_153)'%3E%3Cpath d='M7.63335 8.39492H3.77173V7.10771H7.63335V3.24609H8.92055V7.10771H12.7822V8.39492H8.92055V12.2565H7.63335V8.39492Z' fill='white' fill-opacity='0.8'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 .community .inner .link{
     width: 416px;
@@ -380,11 +454,15 @@ header .logo a {
     height: 165px;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.6);
+    transition: 0.3s;
     backdrop-filter: blur(3px);
     padding:  28px 0 0 28px;
     font-size: 25px;
     font-weight: 700;
     position: relative; /* 정렬 기준 선언 */
+}
+.community .inner .link ul li a:hover {
+    background-color: #000;
 }
 .community .inner .link ul li a::after {
     content: "";
@@ -410,5 +488,40 @@ header .logo a {
 }
 
 footer {
-    margin: 300px 0 0 0;
+    padding: 69px 0 78px 0;
+    background-color: #000;
+}
+footer .f_nav ul {
+    display: flex;
+    gap: 26px;
+    color: #fff;
+}
+footer .f_nav ul li {
+    position: relative;
+}
+footer .f_nav ul li::before {
+    content: "";
+    position: absolute;
+    left: -14px;
+    top: 4px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+footer .f_nav ul li:first-child:before {
+    display: none;
+}
+footer .f_nav ul li a:hover {
+    text-decoration: underline;
+    text-underline-offset: 7px;
+}
+footer .f_info {
+    color: #fff;
+    margin: 40px 12px 29px 0;
+    display: flex;
+    gap: 25px;
+}
+footer .copyright p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 4px 0 0 0;
 }
