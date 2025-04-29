@@ -134,6 +134,76 @@
     }
 }/*@media*/
 
+.global {
+    margin: 134px 0 0 0;
+}
+.global .wrapper {
+    display: flex; /* txt/photo 좌우 배치 */
+    justify-content: space-between;
+}
+.global .txt {
+    width: calc(50% - 12px);
+    /* 2개니까 50%에 둘 사이 여백의 절반 */
+    padding: 31px 0;
+    /* 왼쪽글자의 높이에서 padding만큼 오른쪽 이미지가 늘어남 */
+}
+.global .txt h2 {
+    font-size: 45px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 0 0 17px 0;
+    position: relative;
+}
+.global .txt h2::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 107px;
+    height: 1px;
+    background-color: #ccc;
+}
+.global .photo {
+    width: calc(50% - 12px);
+    overflow: hidden;
+    border-radius: 20px;
+}
+.global .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width:640px) {
+    .global {
+        margin: 68px 0 0 0;
+    }
+    .global .txt {
+        width: calc(50% - 8px);
+        /* 2개니까 50%에 둘 사이 여백의 절반 */
+        padding: 14px 0;
+        /* 왼쪽글자의 높이에서 padding만큼 오른쪽 이미지가 늘어남 */
+    }
+    .global .txt h2 {
+        font-size: 20px;
+        margin: 0 0 12px 0;
+    }
+    .global .txt h2 br {
+        display: none; /* br태그 삭제 */
+    }
+    .global .txt p br {
+        display: none;
+    }
+    .global .txt h2::after {
+        bottom: -6px;
+        width: 56px;
+    }
+    .global .photo {
+        width: calc(50% - 8px);
+        border-radius: 10px;
+    }
+}/*@media*/
+
 body {
     margin: 0 0 300px 0;
 }
