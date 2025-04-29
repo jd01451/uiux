@@ -204,6 +204,118 @@
     }
 }/*@media*/
 
+.esg {
+    margin: 222px 0 0 0;
+}
+.esg .tit h2 {
+    font-size: 45px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 0 0 12px 0;
+}
+.esg .list {
+    margin: 53px 0 0 0;
+}
+.esg .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.esg .list ul li {
+    width: calc(25% - 18px);
+}
+.esg .list ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 25px;
+    font-weight: 700;
+    color: #fff;
+    height: 450px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+    padding: 0 0 40px 0;
+}
+.esg .list ul li.list01 a {
+    background-image: url(../images/esg_bg1.jpg);
+}
+.esg .list ul li.list02 a {
+    background-image: url(../images/esg_bg2.jpg);
+}
+.esg .list ul li.list03 a {
+    background-image: url(../images/esg_bg3.jpg);
+}
+.esg .list ul li.list04 a {
+    background-image: url(../images/esg_bg4.jpg);
+}
+@media screen and (max-width:640px) {
+    .esg {
+        margin: 136px 0 0 0;
+    }
+    .esg .tit h2 {
+        font-size: 20px;
+        margin: 0 0 9px 0;
+    }
+    .esg .list {
+        margin: 29px 0 0 0;
+    }
+    .esg .list ul {
+        flex-wrap: wrap; /* 2 줄 허용 */
+        gap: 16px;
+    }
+    .esg .list ul li {
+        width: calc(50% - 8px);
+        /*100% / 1줄에 나오는 갯수 = 100 / 2 = 50%
+          1줄여백의 총합 /1줄에 나오는 갯수 = 16 / 2 = 5 */
+    }
+    .esg .list ul li a {
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        height: 152px;
+        border-radius: 10px;
+        padding: 0; /* 여백삭제 */
+    }
+}/*@media*/
+
+.esg_fix {
+    margin: 237px 0 0 0;
+}
+.esg_fix .wrapper {
+    display: flex; /* tit/list */
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.esg_fix .tit {
+    width: 23%;
+    /*
+        297px / 1260 * 100 = 23% 
+    */
+    position: sticky;
+    top: 20px;
+}
+.esg_fix .list {
+    width: 57.54%;
+    /* 725px / 1260 * 100 = 57.54*/
+}
+.esg_fix .list ul li a {
+    display: block;
+    height: 450px;
+}
+.esg_fix .list ul li.list01 a {
+    background-image: url(../images/esg_bg1.jpg);
+}
+.esg_fix .list ul li.list02 a {
+    background-image: url(../images/esg_bg2.jpg);
+}
+.esg_fix .list ul li.list03 a {
+    background-image: url(../images/esg_bg3.jpg);
+}
+.esg_fix .list ul li.list04 a {
+    background-image: url(../images/esg_bg4.jpg);
+}
+
 body {
     margin: 0 0 300px 0;
 }
