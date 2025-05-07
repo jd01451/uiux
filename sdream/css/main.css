@@ -76,8 +76,8 @@ header .tnb .lang {
         margin-right: 0; /* 메뉴 오른쪽 여백 삭제*/
     }
     header .logo a img {
-        width: 77px;
-        height: 26px;
+        width: 112px;
+        height: 38px;
     }
     header .gnb .gnb_open {
         display: block; /* none으로 숨김요소를 다른속성만 주면 나타남*/
@@ -86,7 +86,7 @@ header .tnb .lang {
         background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.5 1.83268V0.166016H15.5V1.83268H0.5ZM0.5 11.8327V10.166H15.5V11.8327H0.5ZM0.5 6.83268V5.16602H15.5V6.83268H0.5Z' fill='white'/%3E%3C/svg%3E%0A");
         background-position: center center;
         background-repeat: no-repeat;
-        background-size: 16px 12px;
+        background-size: 20px;
     }
     header .gnb .gnb_wrap {
         display: none;
