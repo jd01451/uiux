@@ -115,7 +115,133 @@ header .tnb .lang {
     .visual h2 {
         padding: 502px 0 10px 0;
     }
+    .visual p {
+        font-size: 20px;
+    }
     .visual p br {
         display: none;
     }
+}
+
+.project {
+    margin: 191px 0 0 0;
+}
+.project .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* tit의 높이를 존재하는 만큼만 주기 위해서 */
+}
+.project .tit {
+    position: sticky; /* 감싸는 wrapper를 기준으로 정렬 무조건 */
+    top: 40px; /* 내려갈때 타이틀 높이 여백 */
+    /*
+    sticky 단점
+    감싸는 요소 중에 단한개라도 overflow:hidden; 값을 가지고 있으면
+    적용이 안됨. 사실상 못쓴다고 생각해야함
+    */
+}
+.project .tit h2 {
+    margin: 0 0 10px 0;
+}
+.project .list {
+    width: 49.04%; /* 618/1260*100 */
+    margin: 97px 0 0 0;
+}
+.project .list ul {
+    display: flex;
+    flex-wrap: wrap; /* 2줄이상 허용 */
+    gap: 24px;
+}
+.project .list ul li {
+    width: calc(50% - 12px);
+    /* 100% / 한줄에 보일 li 갯수 = 100%/2 = 50% 
+       한줄에 있는 여백의 총합 / 한줄에 보일 li 갯수 = 24px/2 = 12px*/
+}
+.project .list ul li:nth-child(even) { /* even -> 짝수 odd -> 홀수 */
+    transform: translateY(-97px);
+}
+.project .list ul li a {
+    display: block;
+    position: relative;
+}
+.project .list ul li a .photo {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    height: 436px;
+}
+.project .list ul li a .photo::before {
+    content: "";
+    position: absolute; /* photo를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+}
+.project .list ul li a:hover .photo::before {
+    background-color: rgba(26, 80, 206, 0.85);
+}
+.project .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.project .list ul li a .txt {
+    position: absolute;
+    left: 30px;
+    bottom: 56px;
+    width: calc(100% - 60px);
+    color: #fff;
+}
+.project .list ul li a .txt h3 {
+    font-family: 'Gmarket Sans';
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+}
+.project .list ul li a .txt p {
+    display: none;
+    margin: 10px 0 20px;
+}
+.project .list ul li a:hover .txt p {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+}
+.project .list ul li a .txt span {
+    display: none;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0 22px 0 0;
+    position: relative;
+}
+.project .list ul li a:hover .txt span {
+    display: inline-block;
+}
+.project .list ul li a:hover .txt span::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    width: 16px;
+    height: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.84625 11.6532L8.79225 10.5687L12.6115 6.74945H0.5V5.24945H12.6115L8.79225 1.4302L9.84625 0.345703L15.5 5.99945L9.84625 11.6532Z' fill='white' fill-opacity='0.8'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.project .list ul li a:hover .txt span:hover::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+@media screen and (max-width:640px) {
+}/*@media*/
+
+footer {
+    margin: 1000px 0 0 0;
 }
