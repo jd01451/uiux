@@ -230,6 +230,7 @@ header .tnb .lang {
     background-color: rgba(255, 255, 255, 0.6);
 }
 @media screen and (min-width:641px) {
+    /* 미디어 쿼리로 교체 641px 이상에서만 작동되게 */
     .project .list ul li a:hover .photo::before {
         background-color: rgba(26, 80, 206, 0.85);
     }
