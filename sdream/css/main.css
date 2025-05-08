@@ -239,18 +239,7 @@ header .tnb .lang {
     height: 1px;
     background-color: rgba(255, 255, 255, 0.6);
 }
-@media screen and (min-width:641px) {
-    .project .list ul li a:hover .photo::before {
-        background-color: rgba(26, 80, 206, 0.85);
-    }
-    .project .list ul li a:hover .txt p {
-        display: block;
-        color: rgba(255, 255, 255, 0.8);
-    }
-    .project .list ul li a:hover .txt span {
-        display: inline-block;
-    }
-}
+
 @media screen and (max-width:640px) {
     .project {
         margin: 100px 0 0 0;
@@ -297,15 +286,15 @@ header .tnb .lang {
         font-size: 16px;
         font-weight: 400;
     }
-    .project .list ul li a .txt p {
+    .project .list ul li a:hover .photo::before {
         display: none;
-        margin: 10px 0 20px;
     }
-    .project .list ul li a .txt span {
+    .project .list ul li a:hover .txt p {
         display: none;
         color: rgba(255, 255, 255, 0.8);
-        padding: 0 22px 0 0;
-        position: relative;
+    }
+    .project .list ul li a:hover .txt span {
+        display: none;
     }
 }/*@media*/
 
