@@ -709,26 +709,39 @@ footer {
 }
 footer .f_nav ul {
     display: flex;
+    flex-wrap: wrap; /* 줄바꿈 */
+    gap: 0 24px; /*위아래값- 좌우값  */
 }
 footer .f_nav ul li {
-    margin-right: 24px;
+    position: relative; /* before/after 정렬의 기준 */
 }
-footer .f_nav ul li:last-child {
-    margin-right: 0;
+footer .f_nav ul li::after {
+    content: "";
+    position: absolute; /* li기준으로 정렬하기 */
+    left: -12px;
+    top: 7px;
+    width: 12px;
+    height: 12px;
+    border-left: 1px solid #ccc;
+} 
+footer .f_nav ul li:first-child::after {
+    display: none;
 }
 footer .f_info {
     margin: 30px 0 10px 0;
+}
+footer .f_info span {
+    margin-right: 24px;
 }
 @media screen and (max-width:640px) {
     footer {
         padding: 39px 0 52px 0;
         font-size: 16px;
     }
-    footer .f_nav ul {
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
     footer .f_info {
         margin: 20px 0 5px 0;
+    }
+    footer .f_info span {
+        margin-right: 0;
     }
 }/*@media*/
