@@ -435,7 +435,8 @@ header .tnb .lang {
 .webzine {
     background-color: #1A50CE;
     color: #fff;
-    padding: 191px 0 179px 0;
+    padding: 175px 0 166px 0;
+    position: relative; /* more 정렬 기준 */
 }
 .webzine .tit h2 {
     color: #fff;
@@ -445,11 +446,16 @@ header .tnb .lang {
     width: calc(50% + 630px);
     position: relative;
     left: calc(50% - 630px);
-    margin: 52px 0 0 0;
+    overflow: hidden;
+    padding: 68px 0 16px 0
 }
 .webzine .list ul {
     display: flex;
     gap: 24px;
+    width: 1605px;
+    /*
+        li의 넓이 * li의 갯수 + li의 여백 * li의 갯수
+    */
 }
 .webzine .list ul li {
     width: 297px;
@@ -460,6 +466,8 @@ header .tnb .lang {
     border-radius: 20px;
     color: #555;
     overflow: hidden;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
 }
 .webzine .list ul li a .photo {
     overflow: hidden;
@@ -469,20 +477,258 @@ header .tnb .lang {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 0.5s; /* 오버이후 부드럽게효과 */
 }
+.webzine .list ul li a .txt {
+    padding: 21px 21px 25px 21px;
+}
+.webzine .list ul li a .txt strong {
+    display: block;
+    color: #1A50CE;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.webzine .list ul li a .txt h3 {
+    display: -webkit-box;
+    font-family: 'Gmarket Sans';
+    font-weight: 700;
+    font-size: 20px;
+    color: #1d1d1d;
+    margin: 20px 0 10px 0;
+    line-height: 1.2;
+    height: 2.4em;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.webzine .list ul li a .txt p {
+    display: -webkit-box;
+    height: 3.0em;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    /* 2줄제한 - 조건 block요소여야함 padding주면 안됨
+       행간 지정 행간을 알면 안줘도됨 행간 * 줄수 = 1.2 * 2 = 2.4 (단위는 em)*/
+    margin: 0 0 20px 0;
+}
+.webzine .more {
+    position: absolute; /* webzine을 기준으로 정렬 */
+    right: calc(50% - 630px);
+    /* 브라우저 사이즈가 변해도 가운데는 변하지 않음
+       그 가운데로부터 wrapper 사이즈 1260의 절반을 더 오른쪽으로 이동 */
+    top: 241px;
+    padding: 0 20px 0 0;
+}
+.webzine .more::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 6px;
+    width: 15px;
+    height: 15px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.53854 9.71198L7.66021 8.80823L10.8429 5.62552H0.75V4.37552H10.8429L7.66021 1.19281L8.53854 0.289062L13.25 5.00052L8.53854 9.71198Z' fill='%23ffffff'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+@media screen and (min-width:641px) {
+    .webzine .list ul li:hover a {
+        transform: translateY(-10px);
+        box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.8);
+    }
+    .webzine .list ul li:hover a .photo img {
+        transform: scale3d(1.1, 1.1, 1);
+    }
+    .webzine .more:hover::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+}/*@media*/
 @media screen and (max-width:640px) {
     .webzine {
-        padding: 105px 0 100px 0;
+        padding: 100px 0 105px 0;
+    }
+    .webzine .tit {
+        margin-right: 40px;
     }
     .webzine .tit h2 {
         margin: 0 0 5px 0;
+        font-size: 25px;
+    }
+    .webzine .tit p {
+        font-size: 16px;
     }
     .webzine .list {
-        width: calc(100% + 20px);
-        left: 20px;
+        width: 100%; /* position속성이 있는 요소는 auto가 적용되지 않음 */
+        left: 0;
+        overflow-x: auto;
+        padding: 25px 0 16px 20px;
+        /* overflow-x 좌우 auto 
+           list안에 있는 요소가 list보다 넓이가 더 크면
+           그때만 가로스크롤바가 생김 */
+    }
+    .webzine .list ul {
+        gap: 16px;
+        width: 1390px;
+        /*
+            262 * 5 + 16 *5
+            li의 넓이 * li의 갯수 + li의 여백 * li의 갯수
+        */
+    }
+    .webzine .list ul li {
+        width: 262px;
+    }
+    .webzine .list ul li a {
+        border-radius: 15px;
+    }
+    .webzine .list ul li a .photo {
+        height: 181px;
+    }
+    .webzine .list ul li a .txt {
+        padding: 12px 15px 26px 15px;
+    }
+    .webzine .list ul li a .txt strong {
+        font-size: 16px;
+    }
+    .webzine .list ul li a .txt h3 {
+        font-size: 18px;
+        margin: 10px 0 5px 0;
+    }
+    .webzine .list ul li a .txt p {
+        margin: 0 0 10px 0;
+    }
+    .webzine .more {
+        right: 17px;
+        top: 100px;
+    }
+    .webzine .more span {
+        display: none;
+    }
+    .webzine .more::after {
+        right: 0;
+        top: 0;
+        width: 30px;
+        height: 30px;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.375 17.625H12.625V12.625H17.625V11.375H12.625V6.375H11.375V11.375H6.375V12.625H11.375V17.625ZM12.0041 23.25C10.4484 23.25 8.98583 22.9548 7.61625 22.3644C6.24687 21.774 5.05562 20.9727 4.0425 19.9606C3.02938 18.9485 2.2274 17.7583 1.63656 16.39C1.04552 15.0219 0.75 13.5599 0.75 12.0041C0.75 10.4484 1.04521 8.98583 1.63562 7.61625C2.22604 6.24687 3.02729 5.05562 4.03938 4.0425C5.05146 3.02937 6.24167 2.2274 7.61 1.63656C8.97812 1.04552 10.4401 0.75 11.9959 0.75C13.5516 0.75 15.0142 1.04521 16.3838 1.63563C17.7531 2.22604 18.9444 3.02729 19.9575 4.03938C20.9706 5.05146 21.7726 6.24167 22.3634 7.61C22.9545 8.97813 23.25 10.4401 23.25 11.9959C23.25 13.5516 22.9548 15.0142 22.3644 16.3837C21.774 17.7531 20.9727 18.9444 19.9606 19.9575C18.9485 20.9706 17.7583 21.7726 16.39 22.3634C15.0219 22.9545 13.5599 23.25 12.0041 23.25ZM12 22C14.7917 22 17.1562 21.0312 19.0938 19.0938C21.0312 17.1562 22 14.7917 22 12C22 9.20833 21.0312 6.84375 19.0938 4.90625C17.1562 2.96875 14.7917 2 12 2C9.20833 2 6.84375 2.96875 4.90625 4.90625C2.96875 6.84375 2 9.20833 2 12C2 14.7917 2.96875 17.1562 4.90625 19.0938C6.84375 21.0312 9.20833 22 12 22Z' fill='%23ffffff'/%3E%3C/svg%3E%0A");
+    }
+}/*@media*/
+
+.service {
+    background-color: #f0f4fa;
+    padding: 191px 0 171px 0;
+}
+.service .tit p {
+    margin: 10px 0 36px 0;
+}
+.service .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.service .list ul li {
+    width: calc(33.33% - 16px);
+    /* 100% / 한줄에 나올 li갯수 =100/33.33
+        한줄에 존재하는 여백의 총합 / 한줄에 나올 li 갯수 = 24+24 = 48/3 =16*/
+}
+ .service .list ul li a {
+    display: block;
+    background-color: #fff;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 19px 24px 24px 24px;
+    position: relative;
+    transition: 0.5s;
+}
+.service .list ul li a::after {
+    content: "";
+    position: absolute;
+    right: 24px;
+    top: 28px;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #1d1d1d;
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_41_396' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_41_396)'%3E%3Cpath d='M13.8462 17.6532L12.7923 16.5687L16.6115 12.7495H4.5V11.2495H16.6115L12.7923 7.4302L13.8462 6.3457L19.5 11.9995L13.8462 17.6532Z' fill='%231D1D1D'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.service .list ul li a h3 {
+    font-size: 20px;
+}
+@media screen and (min-width:641px) {
+    .service .list ul li:hover a {
+        transform: translateY(-10px);
+        box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.5);
+    }
+    .service .list ul li:hover a::after {
+        border: 0;
+        background-color: #1d1d1d;
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_41_396' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_41_396)'%3E%3Cpath d='M13.8462 17.6532L12.7923 16.5687L16.6115 12.7495H4.5V11.2495H16.6115L12.7923 7.4302L13.8462 6.3457L19.5 11.9995L13.8462 17.6532Z' fill='%23ffffff'/%3E%3C/g%3E%3C/svg%3E%0A");
+    }
+}/*@media*/
+@media screen and (max-width:640px) {
+    .service {
+        padding: 100px 0 105px 0;
+    }
+    .service .tit p {
+        margin: 5px 0 29px 0;
+        font-size: 16px;
+    }
+    .service .list ul {
+        display: block;
+    }
+    .service .list ul li {
+        width: auto;
+        margin: 0 0 5px 0;
+    }
+    .service .list ul li:last-child {
+        margin-bottom: 0;
+    }
+     .service .list ul li a {
+        padding: 30px 55px 25px 25px;
+    }
+    .service .list ul li a::after {
+        right: 22px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 28px;
+        height: 28px;
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_44_2090' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_44_2090)'%3E%3Cpath d='M13.8462 17.6532L12.7923 16.5687L16.6115 12.7495H4.5V11.2495H16.6115L12.7923 7.4302L13.8462 6.3457L19.5 11.9995L13.8462 17.6532Z' fill='%231D1D1D'/%3E%3C/g%3E%3C/svg%3E%0A");
+    }
+    .service .list ul li a strong {
+        display: none;
     }
 }/*@media*/
 
 footer {
-    margin: 1200px 0 0 0;
+    padding: 40px 0 50px 0;
+    border-top: 1px solid #ccc;
 }
+footer .f_nav ul {
+    display: flex;
+}
+footer .f_nav ul li {
+    margin-right: 24px;
+}
+footer .f_nav ul li:last-child {
+    margin-right: 0;
+}
+footer .f_info {
+    margin: 30px 0 10px 0;
+}
+@media screen and (max-width:640px) {
+    footer {
+        padding: 39px 0 52px 0;
+        font-size: 16px;
+    }
+    footer .f_nav ul {
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    footer .f_info {
+        margin: 20px 0 5px 0;
+    }
+}/*@media*/
