@@ -730,8 +730,9 @@ footer .f_nav ul li:first-child::after {
 footer .f_info {
     margin: 30px 0 10px 0;
 }
-footer .f_info span {
-    margin-right: 24px;
+footer .f_info ul {
+    display: flex;
+    gap: 24px;
 }
 @media screen and (max-width:640px) {
     footer {
@@ -741,7 +742,9 @@ footer .f_info span {
     footer .f_info {
         margin: 20px 0 5px 0;
     }
-    footer .f_info span {
-        margin-right: 0;
+    footer .f_info ul {
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 0;
     }
 }/*@media*/
