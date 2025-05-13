@@ -1,0 +1,171 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+.tit_font {
+    font-family: 'Eulyoo1945';
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+header {
+    position: absolute; /*wrap*/
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%; /* wrap 기준으로 100% */
+    height: 80px;
+    color: #fff;
+    display: flex; /*로고,gnb,tnb 좌우배치*/
+    justify-content: space-between;
+    align-items: center; /*위 아래 가운데*/
+    padding: 0 30px; /* logo,tnb 좌우여백 */
+    border-bottom: 1px solid rgba(236, 221, 206, 0.5);
+}
+header .logo a {
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    /* 이미지 하단에 존재하는 행간 삭제 */
+}
+header .gnb .gnb_open,
+header .gnb .gnb_close {
+    display: none;
+}
+header .tnb {
+    display: flex; /* mypage, search 배치*/
+    gap: 20px;
+}
+header .tnb .mypage,
+header .tnb .search {
+    width: 30px;
+    height: 30px;
+    display: block;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+header .tnb .mypage {
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_14_1061' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='30' height='30'%3E%3Crect width='30' height='30' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_14_1061)'%3E%3Cpath d='M7.3125 21.375C8.375 20.5625 9.5625 19.9219 10.875 19.4531C12.1875 18.9844 13.5625 18.75 15 18.75C16.4375 18.75 17.8125 18.9844 19.125 19.4531C20.4375 19.9219 21.625 20.5625 22.6875 21.375C23.4167 20.5208 23.9844 19.5521 24.3906 18.4688C24.7969 17.3854 25 16.2292 25 15C25 12.2292 24.026 9.86979 22.0781 7.92188C20.1302 5.97396 17.7708 5 15 5C12.2292 5 9.86979 5.97396 7.92188 7.92188C5.97396 9.86979 5 12.2292 5 15C5 16.2292 5.20312 17.3854 5.60938 18.4688C6.01562 19.5521 6.58333 20.5208 7.3125 21.375ZM15 16.25C13.7708 16.25 12.7344 15.8281 11.8906 14.9844C11.0469 14.1406 10.625 13.1042 10.625 11.875C10.625 10.6458 11.0469 9.60938 11.8906 8.76563C12.7344 7.92188 13.7708 7.5 15 7.5C16.2292 7.5 17.2656 7.92188 18.1094 8.76563C18.9531 9.60938 19.375 10.6458 19.375 11.875C19.375 13.1042 18.9531 14.1406 18.1094 14.9844C17.2656 15.8281 16.2292 16.25 15 16.25ZM15 27.5C13.2708 27.5 11.6458 27.1719 10.125 26.5156C8.60417 25.8594 7.28125 24.9688 6.15625 23.8438C5.03125 22.7188 4.14063 21.3958 3.48438 19.875C2.82812 18.3542 2.5 16.7292 2.5 15C2.5 13.2708 2.82812 11.6458 3.48438 10.125C4.14063 8.60417 5.03125 7.28125 6.15625 6.15625C7.28125 5.03125 8.60417 4.14063 10.125 3.48438C11.6458 2.82812 13.2708 2.5 15 2.5C16.7292 2.5 18.3542 2.82812 19.875 3.48438C21.3958 4.14063 22.7188 5.03125 23.8438 6.15625C24.9688 7.28125 25.8594 8.60417 26.5156 10.125C27.1719 11.6458 27.5 13.2708 27.5 15C27.5 16.7292 27.1719 18.3542 26.5156 19.875C25.8594 21.3958 24.9688 22.7188 23.8438 23.8438C22.7188 24.9688 21.3958 25.8594 19.875 26.5156C18.3542 27.1719 16.7292 27.5 15 27.5ZM15 25C16.1042 25 17.1458 24.8385 18.125 24.5156C19.1042 24.1927 20 23.7292 20.8125 23.125C20 22.5208 19.1042 22.0573 18.125 21.7344C17.1458 21.4115 16.1042 21.25 15 21.25C13.8958 21.25 12.8542 21.4115 11.875 21.7344C10.8958 22.0573 10 22.5208 9.1875 23.125C10 23.7292 10.8958 24.1927 11.875 24.5156C12.8542 24.8385 13.8958 25 15 25ZM15 13.75C15.5417 13.75 15.9896 13.5729 16.3438 13.2188C16.6979 12.8646 16.875 12.4167 16.875 11.875C16.875 11.3333 16.6979 10.8854 16.3438 10.5312C15.9896 10.1771 15.5417 10 15 10C14.4583 10 14.0104 10.1771 13.6562 10.5312C13.3021 10.8854 13.125 11.3333 13.125 11.875C13.125 12.4167 13.3021 12.8646 13.6562 13.2188C14.0104 13.5729 14.4583 13.75 15 13.75Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+header .tnb .search {
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_14_1064' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='30' height='30'%3E%3Crect width='30' height='30' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_14_1064)'%3E%3Cpath d='M24.5 26.25L16.625 18.375C16 18.875 15.2812 19.2708 14.4688 19.5625C13.6562 19.8542 12.7917 20 11.875 20C9.60417 20 7.68229 19.2135 6.10938 17.6406C4.53646 16.0677 3.75 14.1458 3.75 11.875C3.75 9.60417 4.53646 7.68229 6.10938 6.10938C7.68229 4.53646 9.60417 3.75 11.875 3.75C14.1458 3.75 16.0677 4.53646 17.6406 6.10938C19.2135 7.68229 20 9.60417 20 11.875C20 12.7917 19.8542 13.6562 19.5625 14.4688C19.2708 15.2812 18.875 16 18.375 16.625L26.25 24.5L24.5 26.25ZM11.875 17.5C13.4375 17.5 14.7656 16.9531 15.8594 15.8594C16.9531 14.7656 17.5 13.4375 17.5 11.875C17.5 10.3125 16.9531 8.98438 15.8594 7.89062C14.7656 6.79688 13.4375 6.25 11.875 6.25C10.3125 6.25 8.98438 6.79688 7.89062 7.89062C6.79688 8.98438 6.25 10.3125 6.25 11.875C6.25 13.4375 6.79688 14.7656 7.89062 15.8594C8.98438 16.9531 10.3125 17.5 11.875 17.5Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+header .gnb .gnb_wrap ul {
+    display: flex; /* li를 좌우로 배치 */
+}
+header .gnb .gnb_wrap ul li a {
+    display: block;
+    font-size: 20px;
+    line-height: 80px;
+    /* header의 높이 */
+    padding: 0 23px;
+}
+@media screen and (max-width:640px) {
+    header {
+        height: 56px;
+        padding: 0 0 0 15px; /* logo,tnb 좌우여백 */
+        border-bottom: 0;
+    }
+    header .logo a img {
+        width: 125px;
+    }
+    header .gnb .gnb_open {
+        display: block; /*none -> block 숨김요소 보이게*/
+        width: 56px; /* header 높이와 동일 */
+        height: 56px;
+        background-image: url("data:image/svg+xml,%3Csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_14_1322' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='26' height='26'%3E%3Crect width='26' height='26' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_14_1322)'%3E%3Cpath d='M3.25 7.58366V5.41699H22.75V7.58366H3.25ZM3.25 20.5837V18.417H22.75V20.5837H3.25ZM3.25 14.0837V11.917H22.75V14.0837H3.25Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    header .gnb .gnb_wrap {
+        display: none;
+    }
+    header .tnb {
+        display: none;
+    }
+}
+
+.visual {
+    height: 100vh; /* 브라우저의 높이에 맞춰서 */
+    min-height: 530px;
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+}
+.visual h2 {
+    font-size: 60px;
+    color: #fff;
+    padding: 50vh 0 5px 0;
+}
+.visual p {
+    color: #fff;
+}
+@media screen and (max-width:640px) {
+    .visual {
+        height: auto;
+        min-height: 0;
+    }
+    .visual h2 {
+        font-size: 32px;
+        padding: 255px 0 5px 0;
+    }
+    .visual p {
+        font-size: 16px;
+        padding-bottom: 199px;
+    }
+    .visual p br {
+        display: none;
+    }
+}
+
+.book {
+    padding: 200px 0 200px 0;
+    background-color: #ECDDCE;
+}
+.book .book_wrap {
+    width: calc(50% + 630px); /* 브라우저 절반 (50%) + wrapper의 절반 1260 / 2 = 630 */
+    position: relative;
+    left: calc(50% - 630px);
+    display: flex; /* tit, list 좌우 배치 */
+    justify-content: space-between;
+}
+.book .book_wrap .tit h2 {
+    font-size: 40px;
+    color: #1d1d1d;
+    margin: 0 0 10px 0;
+}
+.book .book_wrap .list {
+    width: calc(100% - 321px);
+    /* book_wrap의 넓이를 100%로 하고 왼쪽 tit의 넓이를 빼기 
+       book_wrap (100%) - tit 넓이 */
+    overflow-x: hidden;
+}
+.book .book_wrap .list ul {
+    display: flex; /* li를 좌우로*/
+    gap: 20px;
+    width: 1960px;
+    /* li넓이 * li 갯수 = 256*7 = 1792
+        사이 여백 * li갯수 = 24*7 = 168
+        1960*/
+}
+.book .book_wrap .list ul li {
+    width: 256px;
+}
+.book .book_wrap .list ul li a {
+    display: block;
+}
+.book .book_wrap .list ul li a .photo {
+
+}
+.book .book_wrap .list ul li a .photo img {
+    width: 100%;
+    /* 높이는 비율에 맞게 알아서
+       - 책은 이미지 전체가 나와야 하기 때문에 object-fit 안줌*/
+}
+.book .book_wrap .list ul li a h3 {
+    font-size: 20px;
+    margin: 10px 0 10px 0;
+}
+
+footer {
+    margin: 1000px 0 0 0;
+}
