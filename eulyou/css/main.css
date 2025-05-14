@@ -243,7 +243,7 @@ header .gnb .gnb_wrap ul li a {
     .book .book_wrap .list {
         width: auto;
         overflow-x: auto;
-        padding: 20px 0 10px 0;
+        padding: 20px 0 10px 20px;
     }
     .book .book_wrap .list ul {
         gap: 16px;
