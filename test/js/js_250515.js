@@ -38,6 +38,15 @@ $(document).ready(function(){
             $('header').removeClass('fixed')
         }
     })
+        $(window).ready(function(){
+        scrolling = $(window).scrollTop()
+        // console.log(scrolling)
+        if (scrolling > 0) {
+            $('header').addClass('fixed')
+        }else{
+            $('header').removeClass('fixed')
+        }
+    })
 
     $('.list ul li').on('mouseenter', function(){
         $(this).addClass('on')
