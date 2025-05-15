@@ -40,3 +40,8 @@ body {
     overflow: hidden;
     color: transparent;
 }
+
+::selection { /* 글자 드래그 색깔 변경 */
+  color: #fff;
+  background-color: gray;
+}
