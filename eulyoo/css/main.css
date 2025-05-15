@@ -348,7 +348,7 @@ header .gnb .gnb_wrap ul li a {
     /* z-index는 숫자가 높은게 위 */
     width: calc(100% - 65px);
     opacity: 1;
-    transform: 0.5s;
+    transition: 0.5s;
 }
 .interview .list ul li a .txt::after {
     content: "";
