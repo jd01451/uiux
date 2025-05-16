@@ -134,7 +134,6 @@ header .gnb .gnb_wrap ul li a {
     bottom: 50px;
     left: 40px;
     width: calc(100% - 80px);
-    transition: 0.5s;
 }
 .product .list ul li a .txt h3 {
     font-size: 35px;
