@@ -185,7 +185,7 @@ header .gnb .gnb_wrap ul li a {
 }
 @media screen and (max-width:640px){
     .product {
-        margin: 100px 0 0 0;
+        margin: 100px 0 100px 0;
     }
     .product .tit h2 {
         font-size: 25px;
@@ -210,7 +210,7 @@ header .gnb .gnb_wrap ul li a {
         position: relative;
         bottom: auto;
         left: auto;
-        width: auto;
+        width: auto; 
     }
     .product .list ul li a .txt h3 {
         font-size: 16px;
