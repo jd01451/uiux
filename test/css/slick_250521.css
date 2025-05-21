@@ -1,0 +1,96 @@
+@import url(default.css);
+@import url(common_full.css);
+@import url(font.css);
+
+.visual .popup .popup_wrap .popup_item {
+    height: 800px;
+    color: #fff;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.visual .popup .popup_wrap .popup_item.bg1 {
+    background-image: url(../images/popup01.jpg);
+}
+.visual .popup .popup_wrap .popup_item.bg2 {
+    background-image: url(../images/popup02.jpg);
+}
+.visual .popup .popup_wrap .popup_item.bg3 {
+    background-image: url(../images/popup03.jpg);
+}
+.visual .popup .popup_wrap .popup_item h3 {
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 1.2;
+    padding: 339px 0 10px 0;
+}
+
+.visual .slick-prev,
+.visual .slick-next {
+    position: absolute; /*popup_wrap 기준*/
+    left: 20px;
+    top: 372px;
+    width: 56px;
+    height: 56px;
+    z-index: 10;
+    color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg width='56' height='56' viewBox='0 0 56 56' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_104_53' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='56' height='56'%3E%3Crect width='56' height='56' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_104_53)'%3E%3Cpath d='M18.2584 30.3335L31.325 43.4002L28 46.6668L9.33337 28.0002L28 9.3335L31.325 12.6002L18.2584 25.6668H46.6667V30.3335H18.2584Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.visual .slick-next {
+    left: auto;
+    right: 20px;
+    transform: rotate(180deg);
+}
+.visual ul.slick-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 7px
+}
+.visual ul.slick-dots li button {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    color: transparent
+}
+.visual ul.slick-dots li.slick-active button {
+    background-color: #fff;
+}
+.visual .btn_wrap .ctrl_stop {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+}
+.visual .btn_wrap .ctrl_play {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: green;
+}
+@media screen and (max-width:1440px) {
+    .visual .slick-prev,
+    .visual .slick-next {
+        display: none !important;
+        /* css 적용 우선순위 상관없이 무조건 실행하도록 하는 명령
+           !important
+           -- 단 주의 하나의 요소에 pc버전에서 important,
+              모바일에서 important 이렇게 남발하면 스타일이 꼬임 */
+    }
+}
+@media screen and (max-width:768px) {
+    .visual .popup .popup_wrap .popup_item {
+        height: 600px;
+    }
+    .visual .popup .popup_wrap .popup_item h3 {
+        font-size: 25px;
+        padding: 129px 0 10px 0;
+    }
+}
