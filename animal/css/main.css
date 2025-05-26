@@ -1,0 +1,173 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+header {
+    position: fixed; /* body를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 80px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    display: flex; /* logo gnb util 좌우 배치 */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+header .logo a {
+    display: block;
+    width: 190px;
+    height: 38px;
+    background: url(../images/logo.svg) no-repeat center center / cover;
+}
+header .gnb .gnb_open,
+header .gnb .gnb_close {
+    display: none;
+}
+header .gnb .gnb_wrap ul.depth1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .gnb .gnb_wrap ul.depth1 > li > a {
+    display: block;
+    font-family: 'Suit';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 80px; /* header 높이만큼 */
+    padding: 0 20px;
+}
+header .gnb .gnb_wrap ul.depth1 > li:has(ul.depth2) > a > span {
+    /* li하위에 depth2가 있는 a만 */
+    display: block;
+    padding-right: 17px; /* 아이콘이 들어갈 만큼 */
+    position: relative; /* after 정렬의 기준 */
+}
+header .gnb .gnb_wrap ul.depth1 > li:has(ul.depth2) > a > span::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 32px;
+    height: 32px;
+    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_17_437' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='32' height='32'%3E%3Crect width='32' height='32' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_17_437)'%3E%3Cpath d='M26.1333 28L17.7333 19.6C17.0667 20.1333 16.3 20.5556 15.4333 20.8667C14.5667 21.1778 13.6444 21.3333 12.6667 21.3333C10.2444 21.3333 8.19444 20.4944 6.51667 18.8167C4.83889 17.1389 4 15.0889 4 12.6667C4 10.2444 4.83889 8.19444 6.51667 6.51667C8.19444 4.83889 10.2444 4 12.6667 4C15.0889 4 17.1389 4.83889 18.8167 6.51667C20.4944 8.19444 21.3333 10.2444 21.3333 12.6667C21.3333 13.6444 21.1778 14.5667 20.8667 15.4333C20.5556 16.3 20.1333 17.0667 19.6 17.7333L28 26.1333L26.1333 28ZM12.6667 18.6667C14.3333 18.6667 15.75 18.0833 16.9167 16.9167C18.0833 15.75 18.6667 14.3333 18.6667 12.6667C18.6667 11 18.0833 9.58333 16.9167 8.41667C15.75 7.25 14.3333 6.66667 12.6667 6.66667C11 6.66667 9.58333 7.25 8.41667 8.41667C7.25 9.58333 6.66667 11 6.66667 12.6667C6.66667 14.3333 7.25 15.75 8.41667 16.9167C9.58333 18.0833 11 18.6667 12.6667 18.6667Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+    display: none; /* 2차메뉴 */
+}
+header .util .search .search_open {
+    display: block;
+    width: 56px;
+    height: 56px;
+    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_17_437' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='32' height='32'%3E%3Crect width='32' height='32' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_17_437)'%3E%3Cpath d='M26.1333 28L17.7333 19.6C17.0667 20.1333 16.3 20.5556 15.4333 20.8667C14.5667 21.1778 13.6444 21.3333 12.6667 21.3333C10.2444 21.3333 8.19444 20.4944 6.51667 18.8167C4.83889 17.1389 4 15.0889 4 12.6667C4 10.2444 4.83889 8.19444 6.51667 6.51667C8.19444 4.83889 10.2444 4 12.6667 4C15.0889 4 17.1389 4.83889 18.8167 6.51667C20.4944 8.19444 21.3333 10.2444 21.3333 12.6667C21.3333 13.6444 21.1778 14.5667 20.8667 15.4333C20.5556 16.3 20.1333 17.0667 19.6 17.7333L28 26.1333L26.1333 28ZM12.6667 18.6667C14.3333 18.6667 15.75 18.0833 16.9167 16.9167C18.0833 15.75 18.6667 14.3333 18.6667 12.6667C18.6667 11 18.0833 9.58333 16.9167 8.41667C15.75 7.25 14.3333 6.66667 12.6667 6.66667C11 6.66667 9.58333 7.25 8.41667 8.41667C7.25 9.58333 6.66667 11 6.66667 12.6667C6.66667 14.3333 7.25 15.75 8.41667 16.9167C9.58333 18.0833 11 18.6667 12.6667 18.6667Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.visual .swiper-slide {
+    color: #fff;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.visual .swiper-slide.bg1 {
+    background-image: url(../images/visual_bg1.jpg);
+}
+.visual .swiper-slide.bg2 {
+    background-image: url(../images/visual_bg2.jpg);
+}
+.visual .swiper-slide.bg3 {
+    background-image: url(../images/visual_bg3.jpg);
+}
+.visual .swiper-slide.bg4 {
+    background-image: url(../images/visual_bg4.jpg);
+}
+.visual .swiper-slide.bg5 {
+    background-image: url(../images/visual_bg5.jpg);
+}
+.visual .swiper-slide .wrapper {
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 0 200px 0;
+}
+.visual .swiper-slide p {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.visual .btn_wrap {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+.visual .btn_wrap button {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.visual .btn_wrap button.btn_prev {
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_17_442' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='10' height='10'%3E%3Crect width='10' height='10' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_17_442)'%3E%3Cpath d='M6.24628 9L2 5L6.24628 1L7 1.71L3.50743 5L7 8.29L6.24628 9Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.visual .btn_wrap button.btn_next {
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_17_442' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='10' height='10'%3E%3Crect width='10' height='10' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_17_442)'%3E%3Cpath d='M6.24628 9L2 5L6.24628 1L7 1.71L3.50743 5L7 8.29L6.24628 9Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    transform: rotate(180deg);
+}
+.visual .btn_wrap button.btn_stop {
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_17_451' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='10' height='10'%3E%3Crect width='10' height='10' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_17_451)'%3E%3Cpath d='M6.66667 7.91634C6.4375 7.91634 6.24132 7.83474 6.07813 7.67155C5.91493 7.50836 5.83333 7.31217 5.83333 7.08301V2.91634C5.83333 2.68717 5.91493 2.49099 6.07813 2.3278C6.24132 2.16461 6.4375 2.08301 6.66667 2.08301C6.89583 2.08301 7.09201 2.16461 7.25521 2.3278C7.4184 2.49099 7.5 2.68717 7.5 2.91634V7.08301C7.5 7.31217 7.4184 7.50836 7.25521 7.67155C7.09201 7.83474 6.89583 7.91634 6.66667 7.91634ZM3.33333 7.91634C3.10417 7.91634 2.90799 7.83474 2.74479 7.67155C2.5816 7.50836 2.5 7.31217 2.5 7.08301V2.91634C2.5 2.68717 2.5816 2.49099 2.74479 2.3278C2.90799 2.16461 3.10417 2.08301 3.33333 2.08301C3.5625 2.08301 3.75868 2.16461 3.92188 2.3278C4.08507 2.49099 4.16667 2.68717 4.16667 2.91634V7.08301C4.16667 7.31217 4.08507 7.50836 3.92188 7.67155C3.75868 7.83474 3.5625 7.91634 3.33333 7.91634Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.visual .btn_wrap button.btn_play {
+    display: none; /* 정지버튼을 눌렀을때만 나옴 */
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_41_1043' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='10' height='10'%3E%3Crect x='10' y='10' width='10' height='10' transform='rotate(-180 10 10)' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_41_1043)'%3E%3Cpath d='M7.36475 4.64567C7.42725 4.68734 7.47412 4.73942 7.50537 4.80192C7.53662 4.86442 7.55225 4.93039 7.55225 4.99984C7.55225 5.06928 7.53662 5.13525 7.50537 5.19775C7.47412 5.26025 7.42725 5.31234 7.36475 5.354L3.96891 7.51025C3.93419 7.53109 3.89773 7.54671 3.85954 7.55713C3.82134 7.56755 3.78489 7.57275 3.75016 7.57275C3.63905 7.57275 3.54183 7.53282 3.4585 7.45296C3.37516 7.3731 3.3335 7.27414 3.3335 7.15609L3.3335 2.84359C3.3335 2.72553 3.37516 2.62657 3.4585 2.54671C3.54183 2.46685 3.63905 2.42692 3.75016 2.42692C3.78489 2.42692 3.82134 2.43213 3.85954 2.44254C3.89773 2.45296 3.93419 2.46859 3.96891 2.48942L7.36475 4.64567Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+@media screen and (max-width:1024px) {
+    .visual .swiper-slide .wrapper {
+        height: 600px;
+        padding: 0 0 150px 0;
+    }
+    .visual .swiper-slide p {
+        font-size: 40px;
+    }
+}
+@media screen and (max-width:768px) {
+    .visual .swiper-slide .wrapper {
+        height: 400px;
+        padding: 0 0 100px 0;
+    }
+    .visual .swiper-slide p {
+        font-size: 25px;
+    }
+    .visual .btn_wrap {
+        bottom: 20px;
+    }
+    .visual .btn_wrap button.btn_prev {
+        display: none;
+    }
+    .visual .btn_wrap button.btn_next {
+        display: none;
+    }
+    .visual .btn_wrap button.btn_stop {
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_17_451' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='10' height='10'%3E%3Crect width='10' height='10' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_17_451)'%3E%3Cpath d='M6.66667 7.91634C6.4375 7.91634 6.24132 7.83474 6.07813 7.67155C5.91493 7.50836 5.83333 7.31217 5.83333 7.08301V2.91634C5.83333 2.68717 5.91493 2.49099 6.07813 2.3278C6.24132 2.16461 6.4375 2.08301 6.66667 2.08301C6.89583 2.08301 7.09201 2.16461 7.25521 2.3278C7.4184 2.49099 7.5 2.68717 7.5 2.91634V7.08301C7.5 7.31217 7.4184 7.50836 7.25521 7.67155C7.09201 7.83474 6.89583 7.91634 6.66667 7.91634ZM3.33333 7.91634C3.10417 7.91634 2.90799 7.83474 2.74479 7.67155C2.5816 7.50836 2.5 7.31217 2.5 7.08301V2.91634C2.5 2.68717 2.5816 2.49099 2.74479 2.3278C2.90799 2.16461 3.10417 2.08301 3.33333 2.08301C3.5625 2.08301 3.75868 2.16461 3.92188 2.3278C4.08507 2.49099 4.16667 2.68717 4.16667 2.91634V7.08301C4.16667 7.31217 4.08507 7.50836 3.92188 7.67155C3.75868 7.83474 3.5625 7.91634 3.33333 7.91634Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    }
+    .visual .btn_wrap button.btn_play {
+        display: none; /* 정지버튼을 눌렀을때만 나옴 */
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_41_1043' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='10' height='10'%3E%3Crect x='10' y='10' width='10' height='10' transform='rotate(-180 10 10)' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_41_1043)'%3E%3Cpath d='M7.36475 4.64567C7.42725 4.68734 7.47412 4.73942 7.50537 4.80192C7.53662 4.86442 7.55225 4.93039 7.55225 4.99984C7.55225 5.06928 7.53662 5.13525 7.50537 5.19775C7.47412 5.26025 7.42725 5.31234 7.36475 5.354L3.96891 7.51025C3.93419 7.53109 3.89773 7.54671 3.85954 7.55713C3.82134 7.56755 3.78489 7.57275 3.75016 7.57275C3.63905 7.57275 3.54183 7.53282 3.4585 7.45296C3.37516 7.3731 3.3335 7.27414 3.3335 7.15609L3.3335 2.84359C3.3335 2.72553 3.37516 2.62657 3.4585 2.54671C3.54183 2.46685 3.63905 2.42692 3.75016 2.42692C3.78489 2.42692 3.82134 2.43213 3.85954 2.44254C3.89773 2.45296 3.93419 2.46859 3.96891 2.48942L7.36475 4.64567Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    }
+}
+
+footer {
+    margin: 500px 0 0 0;
+}

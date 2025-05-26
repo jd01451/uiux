@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Godo';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../font/GodoM.woff2') format('woff2'), url('../font/GodoM.woff2') format('woff');
+}
+@font-face {
+    font-family: 'Godo';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../font/GodoB.woff2') format('woff2'), url('../font/GodoB.woff') format('woff');
+}
+@font-face {
+    font-family: 'Suit';
+    src: url('../font/SUIT-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Suit';
+    src: url('../font/SUIT-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}

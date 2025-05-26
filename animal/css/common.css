@@ -1,0 +1,45 @@
+/* 모든페이지에 공통으로 들어가는 기본 스타일 */
+body {
+    font-family: 'Godo', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #3d3d3d;
+    word-break: keep-all; /* 스페이스기준 단어별로 줄바꿈 */
+    word-wrap: break-word; /* 단어가 너무 긴경우 강제로 줄바꿈*/
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto; /* 가운데 */
+}
+#wrap {
+    position: relative; /* header 정렬의 기준 */
+    overflow-x: hidden; /* 가로스크롤 삭제 */
+    width: 100%;
+}
+@media screen and (max-width:1300px) { /* 20 + 20 = 40 + 1260px = 1300px */
+    .wrapper {
+        width: auto;
+        margin: 0 20px;
+    }
+}
+@media screen and (max-width:768px) {
+    body {
+        font-size: 16px;
+    }
+}
+/* 글자 숨기기 클래스 */
+.blind {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    color: transparent;
+}
+
+::selection { /* 글자 드래그 색깔 변경 */
+    color: #fff;
+    background-color: rgb(163, 163, 163);
+}
