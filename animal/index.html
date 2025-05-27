@@ -15,7 +15,18 @@
     <title>동물보호센터</title>
 </head>
 <body>
+    <div class="skip_nav">
+        <a href="#skip_content">본문바로가기</a>
+        <!-- id="skip_content" 인 요소로 바로가기 (내부링크) -->
+    </div>
     <div id="wrap">
+        <!--
+            header에 마우스를 오버하거나 스크롤을 내리면 - fixed 클래스 추가
+            메뉴에 마우스를 오버하면 오버한 li에만 over 클래스를 추가
+
+            모바일에서 메뉴 열기 버튼을 클릭하면 header에 menu_open 클래스추가
+            모바일에서 1차 메뉴를 클릭하면 클릭한 li에 open 클래스 추가
+        -->
         <header>
             <h1 class="logo"><a href="#"><span class="blind">동물보호센터</span></a></h1>
             <nav class="gnb">
@@ -23,27 +34,27 @@
                 <div class="gnb_wrap">
                     <ul class="depth1">
                         <li>
-                            <a href="https://naver.com">찾습니다</a>
+                            <a href="https://naver.com"><span>찾습니다</span></a>
                             <ul class="depth2">
                                 <li><a href="#"><span>실종신고</span></a></li>
                                 <li><a href="#"><span>구조정보/목격담</span></a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="https://naver.com">구조분양</a>
+                            <a href="https://naver.com"><span>구조분양</span></a>
                         </li>
                         <li>
-                            <a href="https://naver.com">네트워크</a>
+                            <a href="https://naver.com"><span>네트워크</span></a>
                             <ul class="depth2">
                                 <li><a href="#"><span>동물찾기 네트워크</span></a></li>
                                 <li><a href="https://www.animal.go.kr/front/index.do" target="_blank" title="새창열림"><span>국가동물보호정보시스템</span></a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="https://naver.com">재회성공담</a>
+                            <a href="https://naver.com"><span>재회성공담</span></a>
                         </li>
                         <li>
-                            <a href="https://naver.com">대처방법</a>
+                            <a href="https://naver.com"><span>대처방법</span></a>
                             <ul class="depth2">
                                 <li><a href="#"><span>실종시 대처방법</span></a></li>
                                 <li><a href="#"><span>구조시 대처방법</span></a></li>
@@ -99,7 +110,225 @@
                     </div><!--btn_wrap-->
                 </div><!--swiper-->
             </section><!--visual-->
-            <section class="find"></section><!--find-->
+            <section class="find" id="skip_content">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>찾습니다</h2>
+                    </div>
+                    <div class="list">
+                        <div class="tab_list">
+                            <ul role="tablist">
+                                <!-- 선택된 li에는 active 클래스 추가, button에 선택됨이라고 써줌
+                                     aria-selected가 true 가 선택된 것 false 선택이 안된 것
+                                     data-content li를 눌렀을때 나타날 탭 컨텐츠 id 값
+                                     li를 클릭했을때 data-content값을 호출해서 id가 같은 요소만 보이게함
+                                     data-contenct는 내맘대로 속성을 추가.... (값을 저장할 공간이 필요해서 - 표준위배)
+                                     data-link라던가 data-value 이렇게 data가 들어간 속성은 퍼블이 만든 속성-->
+                                <li role="tab" aria-selected="true" class="item1 active" data-content="tab_item1"><button>가족을<span class="">선택됨</span></button></li>
+                                <li role="tab" aria-selected="false" class="item2" data-content="tab_item2"><button>주인을<span class=""></span></button></li>
+                            </ul>
+                        </div>
+                        <div class="tab_content">
+                            <!-- 가족을, 주인을 탭콘텐츠를 구분 item1/item2로 클래스명 구분 
+                                현재 선택된 탭 컨텐츠트 active클래스 추가 -->
+                            <div class="tab_item item1 active" id="tab_item1">
+                                <h3 class="blind">가족을 찾습니다.</h3>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find01.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_lost">실종</strong>
+                                                <h4>코리아 쇼트 헤어</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>인천광역시 서구 신현동 대성베르힐아파트 근처 공원</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-03-23</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>왼쪽 아래 송곳니 부러짐</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find02.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_end">종료</strong>
+                                                <h4>골든 리트리버</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>경기도 남양주시 장현천로135-11리치타운 근방</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-5-16</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>사람을 잘따르고 애교가 많습니다. 혹시나 보신분은 연락한번만 해주세요 ㅠㅠ</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find03.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_lost">실종</strong>
+                                                <h4>보더콜리</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>경기도 화성시 오후2시15분 경기 화성시 남양읍 무하로 115-9</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-4-28</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>겁이 많아요</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find04.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_lost">실종</strong>
+                                                <h4>러시안 블루</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>대구광역시 중구 국채보상공원GS25시 근처</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-19</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>구조묘인데 어릴때 영양이 부족해서인지 꼬리가 지그재그모양으로 생겼고 가슴부위(앞다리사이)에 흰털이 조금 있습니다. 사람에겐 친근히 다가가고 차량이나 오트바이를 무서워합니다.</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab_item item2" id="tab_item2">
+                                <h3 class="blind">주인을 찾습니다.</h3>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find05.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_see">목격</strong>
+                                                <h4>코리아 쇼트 헤어</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>인천광역시 서구 신현동 대성베르힐아파트 근처 공원</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-03-23</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>왼쪽 아래 송곳니 부러짐</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find06.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_end">종료</strong>
+                                                <h4>골든 리트리버</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>경기도 남양주시 장현천로135-11리치타운 근방</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-5-16</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>사람을 잘따르고 애교가 많습니다. 혹시나 보신분은 연락한번만 해주세요 ㅠㅠ</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find07.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_care">구조</strong>
+                                                <h4>보더콜리</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>경기도 화성시 오후2시15분 경기 화성시 남양읍 무하로 115-9</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-4-28</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>겁이 많아요</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find08.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_see">목격</strong>
+                                                <h4>러시안 블루</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>대구광역시 중구 국채보상공원GS25시 근처</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-19</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>구조묘인데 어릴때 영양이 부족해서인지 꼬리가 지그재그모양으로 생겼고 가슴부위(앞다리사이)에 흰털이 조금 있습니다. 사람에겐 친근히 다가가고 차량이나 오트바이를 무서워합니다.</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!--tab_content-->
+                    </div><!--list-->
+                </div>
+            </section><!--find-->
             <section class="slogan"></section><!--slogan-->
             <section class="adopt"></section><!--adopt-->
             <section class="review"></section><!--review-->
