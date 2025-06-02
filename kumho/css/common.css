@@ -1,0 +1,89 @@
+/* 모든페이지에 공통으로 들어가는 기본 스타일 */
+html, body {
+    font-family: "El Messiri", "Pretendard", sans-serif;
+    /* 앞에 쓴 서체를 적용하고 지원이 안되면 두번째 서체를 적용 */
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #3d3d3d;
+    word-break: keep-all; /* 스페이스기준 단어별로 줄바꿈 */
+    word-wrap: break-word; /* 단어가 너무 긴경우 강제로 줄바꿈*/
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto; /* 가운데 */
+}
+#wrap {
+    position: relative; /* header 정렬의 기준 */
+    overflow-x: hidden; /* 가로스크롤 삭제 */
+    width: 100%;
+}
+@media screen and (max-width:1300px) { /* 20 + 20 = 40 + 1260px = 1300px */
+    .wrapper {
+        width: auto;
+        margin: 0 20px;
+    }
+}
+@media screen and (max-width:768px) {
+    body {
+        font-size: 16px;
+    }
+}
+/* 글자 숨기기 클래스 */
+.blind {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    color: transparent;
+}
+
+::selection { /* 글자 드래그 색깔 변경 */
+    color: #fff;
+    background-color: #999;
+}
+
+.skip_nav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000; /* 맨위 */
+    width: 100%;
+}
+.skip_nav a {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    background-color: navy;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    top: -1000px;
+    width: 100%;
+}
+.skip_nav a:focus {
+    top: 0;
+}
+
+/* css 변수 */
+:root {
+    --header-h: 100px; /* header의 높이 */
+    --tit-color: #1d1d1d;
+    --point-color: #ED1C24;
+    --bold-weight: 700;
+    --tit-font-size: 2.64rem; /* 45/17* = 2.64*/
+    --tit-line-height: 1.2;
+    --tit-ico: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 5.16528C0 5.34497 0.0261398 5.53119 0.0980352 5.70762C0.415029 6.49172 1.22222 6.97525 2.24836 6.56686C2.49346 6.46885 9.28104 3.73429 9.28104 3.73429C9.28104 3.73429 6.60784 10.5102 6.50653 10.7618C6.11764 11.7321 6.58496 12.611 7.37908 12.905C7.55555 12.9704 7.73856 13.003 7.9183 12.9998C8.56863 12.9965 9.14052 12.6143 9.42156 11.8498C9.46405 11.7354 12.8072 2.55814 12.8791 2.33924C12.9216 2.20856 13 1.90145 13 1.68909C13 1.23496 12.8333 0.806973 12.5098 0.48353C12.1928 0.163355 11.768 0 11.3203 0C11.1013 0 10.9248 0.0392052 10.6569 0.12415C10.4967 0.176423 1.87909 3.38144 1.14379 3.65588C0.408497 3.93032 -1.79508e-06 4.51839 0.00326618 5.16528' fill='%23ED1C24'/%3E%3C/svg%3E%0A");
+}
+@media screen and (max-width:1024px) {
+    :root {
+        --header-h: 64px; /* header의 높이 */
+    }
+}
+@media screen and (max-width:768px) {
+    :root {
+        --tit-font-size: 2.05rem; /* 35/17 = 1.47 */
+    }
+}
