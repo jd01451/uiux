@@ -10,17 +10,32 @@
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/main.js"></script>
+    <script src="js/common.js"></script>
     <title>금호건설</title>
 </head>
 <body>
     <div id="wrap">
+        <!-- 
+             고정될때 fixed
+             메뉴가 상단으로 사라질때 gnb_up
+             pc버전에서 메뉴에 마우스를 오버하면 menu_over 
+        -->
         <header>
             <h1 class="logo"><a href="index.html"><span class="blind">금호건설</span></a></h1>
             <nav class="gnb">
-                <button class="gnb_open"><span>메뉴열기</span></button>
+                <button class="gnb_open"><span class="blind">메뉴열기</span></button>
                 <div class="gnb_wrap">
+                    <div class="gnb_util">
+                        <div class="lang">
+                            <button class="lang_open"><span>KR</span></button>
+                        </div><!--lang-->
+                        <div class="search">
+                            <button class="search_open"><span>검색</span></button>
+                        </div><!--search-->
+                    </div><!--gnb_util-->
                     <ul class="depth1">
-                        <li>
+                        <!--pc버전에서 over클래스 추가, 모바일에서는 open 클래스 추가-->
+                        <li class="">
                             <a href="#"><span>회사소개</span></a>
                             <ul class="depth2">
                                 <li><a href="#"><span>기업정보</span></a></li>
@@ -73,8 +88,8 @@
                             </ul>
                         </li>
                     </ul>
-                </div>
-                <button class="gnb_close"><span>메뉴닫기</span></button>
+                    <button class="gnb_close"><span class="blind">메뉴닫기</span></button>
+                </div><!--gnb_wrap-->
             </nav>
             <div class="util">
                 <div class="lang">
