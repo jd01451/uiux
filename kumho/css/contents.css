@@ -89,7 +89,7 @@
 .ctn_map .tel ul li span,
 .ctn_map .traffic ul li span {
     color: var(--tit-color);
-    font-size: 1.29em;
+    font-size: 1.29rem;
     font-weight: var(--bold-weight);
     line-height: 1.2;
 }
@@ -104,6 +104,10 @@
 .ctn_map .location ul {
     display: flex;
     gap: 0.88em;
+}
+.ctn_map .location ul li {
+    white-space: nowrap;
+    margin-left: 1.18em;
 }
 .ctn_map .location ul li a {
     border: 1px solid #1d1d1d;
@@ -171,4 +175,53 @@
 .ctn_map .traffic ul li {
     display: flex;
     gap: 1.88em;
+}
+@media screen and (max-width:768px){
+    .ctn_map .map {
+        left: auto;
+        width: auto;
+    }
+    .ctn_map .map iframe {
+        height: 20.31em;
+    }
+    
+    .ctn_map .location {
+        margin: 1.87em 0 1.87em 0;
+    }
+    .ctn_map .location .tit {
+        display: block
+    }
+    .ctn_map .location ul {
+        margin: 1.5em 0 0 0
+    }
+    .ctn_map .location ul li a {
+        border: 1px solid #1d1d1d;
+        padding: 0.69em 1.68em;
+    }
+    
+    .ctn_map .tel .tit {
+        display: block;
+    }
+    .ctn_map .tel ul {
+        gap: 0;
+    }
+    .ctn_map .tel ul li {
+        gap: 0.62em;
+        margin: 1.5em 0 0 0
+    }
+    .ctn_map .tel p {
+        margin: 1.89em 0 0.62em 0;
+    }
+    
+    .ctn_map .traffic .tit {
+        display: block;
+    }
+    .ctn_map .traffic ul {
+        margin: 1.5em 0 0 0;
+        gap: 0.88em;
+    }
+    .ctn_map .traffic ul li {
+        display: flex;
+        gap: 0.62em;
+    }
 }
