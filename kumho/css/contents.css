@@ -1,0 +1,172 @@
+/* 회사소개 > CEO인사말 */
+
+.ctn_ceo {
+    position: relative; /* before 정렬의 기준 */
+}
+.ctn_ceo::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 24.06em;
+    background-color: #F6FCFF;
+    z-index: -1;
+}
+.ctn_ceo .wrapper {
+    position: relative; /* photo 정렬의 기준 */
+}
+
+.ctn_ceo .ceo_tit {
+    padding: 6.09em 0 0 45.55%;
+}
+.ctn_ceo .ceo_tit strong {
+    display: block;
+    color: var(--point-color);
+}
+.ctn_ceo .ceo_tit h2 {
+    color: var(--tit-color);
+    font-size: 2.35rem;
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+    margin: 0.25em 0 0.5em 0;
+}
+.ctn_ceo .photo {
+    position: absolute;
+    left: 0;
+    top: 6.09em;
+    width: 40.55%;
+    height: 40.65em;
+    border-radius: 1.47em;
+    overflow: hidden;
+}
+.ctn_ceo .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.ctn_ceo .ceo_detail {
+    margin: 8.82em 0 10em 45.55%;
+    line-height: 1.7;
+}
+.ctn_ceo .ceo_detail .sign {
+    display: flex;
+    margin: 1.5em 0 0 0;
+    gap: 2.2em;
+}
+.ctn_ceo .ceo_detail .sign strong {
+    color: var(--tit-color);
+    font-weight: var(--bold-weight);
+}
+.ctn_map .map {
+    position: relative;
+    left: calc(50% - 630px);
+    width: calc(50% + 630px);
+}
+.ctn_map .map iframe {
+    width: 100%;
+    height: 31.70em;
+    border: 0;
+}
+@media screen and (max-width:1300px){
+    .ctn_map .map {
+        left: 20px;
+        width: calc(100% - 20px);
+    }
+}
+
+.ctn_map {
+    font-family: 'Pretendard';
+}
+.ctn_map .location h2,
+.ctn_map .tel .tit h2,
+.ctn_map .traffic .tit h2 {
+    color: var(--tit-color);
+    font-size: var(--tit-font-size);
+    line-height: var(--tit-line-height);
+    font-weight: var(--bold-weight);
+}
+.ctn_map .tel ul li span,
+.ctn_map .traffic ul li span {
+    color: var(--tit-color);
+    font-size: 1.29em;
+    font-weight: var(--bold-weight);
+    line-height: 1.2;
+}
+
+.ctn_map .location {
+    margin: 2.94em 0 0 0;
+}
+.ctn_map .location .tit {
+    display: flex;
+    justify-content: space-between;
+}
+.ctn_map .location ul {
+    display: flex;
+    gap: 0.88em;
+}
+.ctn_map .location ul li a {
+    border: 1px solid #1d1d1d;
+    padding: 0.59em 2.23em;
+    border-radius: 2.94em;
+}
+
+.ctn_map .tel {
+    margin: 2.94em 0 4.59em 0;
+    border-top: 1px solid #ccc;
+    padding: 2.94em 0 0 0;
+}
+.ctn_map .tel .tit {
+    display: flex;
+    gap: 15.94em;
+}
+.ctn_map .tel ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 0.88em;
+}
+.ctn_map .tel ul li {
+    display: flex;
+    gap: 1.59em;
+}
+.ctn_map .tel p {
+    margin: 2.35em 0 0.59em 0;
+}
+.ctn_map .tel .more {
+    border: 1px solid var(--base-color);
+    border-radius: 2.94em;
+    padding: 0.29em 2.41em 0.29em 1.06em;
+    position: relative;
+}
+.ctn_map .tel .more::before {
+    content: "";
+    position: absolute;
+    right: 0.94em;
+    top: 0.41em;
+    width: 1.06em;
+    height: 1.06em;
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_202_513' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='18' height='18'%3E%3Crect width='18' height='18' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_202_513)'%3E%3Cpath d='M3.75 15.75C3.3375 15.75 2.98438 15.6031 2.69063 15.3094C2.39688 15.0156 2.25 14.6625 2.25 14.25V3.75C2.25 3.3375 2.39688 2.98438 2.69063 2.69063C2.98438 2.39688 3.3375 2.25 3.75 2.25H9V3.75H3.75V14.25H14.25V9H15.75V14.25C15.75 14.6625 15.6031 15.0156 15.3094 15.3094C15.0156 15.6031 14.6625 15.75 14.25 15.75H3.75ZM7.275 11.775L6.225 10.725L13.2 3.75H10.5V2.25H15.75V7.5H14.25V4.8L7.275 11.775Z' fill='%23767676'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.ctn_map .traffic {
+    margin: 2.94em 0 12.05em 0;
+    border-top: 1px solid #ccc;
+    padding: 2.94em 0 0 0;
+}
+.ctn_map .traffic .tit {
+    display: flex;
+    gap: 15.94em;
+}
+.ctn_map .traffic ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 0.88em;
+}
+.ctn_map .traffic ul li {
+    display: flex;
+    gap: 1.88em;
+}
