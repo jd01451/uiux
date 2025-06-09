@@ -132,12 +132,14 @@
 }
 .ctn_map .tel p {
     margin: 2.35em 0 0.59em 0;
+    color: #767676;
 }
 .ctn_map .tel .more {
     border: 1px solid var(--base-color);
     border-radius: 2.94em;
     padding: 0.29em 2.41em 0.29em 1.06em;
     position: relative;
+    color: #767676;
 }
 .ctn_map .tel .more::before {
     content: "";
