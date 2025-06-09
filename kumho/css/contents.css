@@ -58,6 +58,9 @@
     color: var(--tit-color);
     font-weight: var(--bold-weight);
 }
+.ctn_map {
+    font-family: 'Pretendard';
+}
 .ctn_map .map {
     position: relative;
     left: calc(50% - 630px);
@@ -75,9 +78,6 @@
     }
 }
 
-.ctn_map {
-    font-family: 'Pretendard';
-}
 .ctn_map .location h2,
 .ctn_map .tel .tit h2,
 .ctn_map .traffic .tit h2 {
