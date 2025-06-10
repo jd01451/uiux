@@ -109,7 +109,7 @@
     background-color: #fff;
 }
 @media screen and (max-width:768px){
-    .lnb {
+    .lnb ul {
         justify-content: flex-start; /* 왼쪽 정렬 */
     }
     .lnb ul li a {
@@ -127,7 +127,25 @@
     text-align: center;
     color: var(--tit-color);
 }
+@media screen and (max-width:1440px){
+    .page_tit {
+        margin: 4.37em 0 1.55em 0;
+        font-size: 2.19rem;
+        font-weight: var(--bold-weight);
+        text-align: center;
+        color: var(--tit-color);
+    }
+}
 @media screen and (max-width:1024px){
+    .page_tit {
+        margin: 4.37em 0 1.35em 0;
+        font-size: 2.19rem;
+        font-weight: var(--bold-weight);
+        text-align: center;
+        color: var(--tit-color);
+    }
+}
+@media screen and (max-width:768px){
     .page_tit {
         margin: 4.37em 0 1.25em 0;
         font-size: 2.19rem;
