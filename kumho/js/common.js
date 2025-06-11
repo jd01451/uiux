@@ -79,6 +79,14 @@ $(document).ready(function(){//문서가 로딩 되고 단 1번 실행
         } 
     })
 
+    /* TOP버튼을 클릭하면 상단으로 스크롤 */
+    $('footer .top').on('click', function(){
+        // console.log('top버튼')
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500)
+    })
+
 })
 
 //함수의 선언 
